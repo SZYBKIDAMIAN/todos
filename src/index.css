@@ -1,13 +1,337 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    min-height: 10vh;
+    background: #1F1F1F;
+    border-bottom: 2px solid #49a7ff;
+    margin-bottom: 5vh;
+}
+
+.logo-container {   
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    color: #49a7ff;
+    font-size: 50px;
+    letter-spacing: 5px;
+    font-family: 'VT323', monospace;
+}
+
+.task-preview {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 25px;
+    background: transparent;
+    border-bottom: solid 1px #49a7ff;
+    display: flex;
+}
+
+.task-preview p {
+    margin-top: 15px;
+    padding: 0.5em 0.2em 0.8em 0.5em;
+    background: #E6E6E6;
+    color: #1F1F1F;
+    border-radius: 20px;
+    font-size: 20px;
+    flex: 2;
+    height: 40px;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.task-preview button {
+    margin-top: 20px;
+    height: 30px;
+}
+
+#delete-icon {
+    cursor: pointer;
+}
+
+.task-preview button {
+    margin-right: 5px;
+    margin-left: 50px;
+}
+
+.box {
+    margin: 17px 27px 15px 0px;
+}
+
+.round input {
+    margin-top: 25px;
+    width: 2.1em;
+    height: 2.1em;
+    background-color: #CCCCCC;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.round input:checked {
+    background-color: #49a7ff;
+}
+
+
+input[class='box']:checked~p.para {
+    text-decoration: line-through;
+    opacity: 0.5;
+} 
+
+form {
+    display: flex;
+    margin: auto;
+    width: 40%;
+    border-bottom: solid 1px white;
+    margin-bottom: 40px;
+}
+
+.create-input {
+    display: flex;
+    width: 900px;
+    background: transparent;
+    font-size: 20;
+    border: none;
+    outline: none;
+    color: #6b6b6b;
+    height: 30px;
+    padding: 20px;
+    padding: 10px 10px 10px 65px;
+    font-size: 20px;
+    font-weight: 0;
+    margin-left: 20px;
+}
+
+::placeholder {
+    color: #6b6b6b;
+}
+
+.create button {
+    font-size: 20px;
+    background: transparent;
+    color: #49a7ff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-right: 5px;
+}
+
+.create button:hover {
+    color: white;
+}
+
+.create button:active {
+    border: none;
+}
+
+.create-input:hover {
+    border-color: #A9F8FB;
+}
+
+.fetch-error {
+    text-align: center;
+    margin-top: 50px;
+    color: red;
+    font-size: 20px;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 50px;
+    color: #49a7ff;
+    font-size: 20px;
+}
+
+.intro-text {
+    font-size: 55px;
+    color: white;
+    font-family: 'VT323', monospace;
+    text-align: center;
+    margin-bottom: 8vh;
+}
+
+.intro-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.holder {
+    position: relative;
+}
+
+.holder .start {
+    color: black;
+    background: #49a7ff;
+    outline: none;
+    border: none;
+    font-family: 'VT323', monospace;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 20px;   
+    cursor: pointer;
+    display: inline;
+    position: absolute;
+    bottom: 100px; 
+    right: 53%; 
+    z-index: 3;
+}
+
+.start:hover {
+    background: white;
+    color: #49a7ff;
+}
+
+.curved {
+    display: block;
+}
+
+.curved .jeden {
+    position: absolute;
+    bottom: -20px;
+    z-index: 1;
+}
+
+.curved .dwa {
+    position: absolute;
+    bottom: -15px;
+}
+
+.footer {
+    width: 100%;
+    background: #1f1f1f;
+    border-top: 2px solid #49a7ff;
+    min-height: 10vh;
+    z-index: 5;
+    text-align: center;
+    color: #6b6b6b;
+}
+
+.footer p {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 710px) {
+    .intro-img {
+    width: 100%;
+    height: auto;
+}
+.holder .start {
+    width: 200px;
+    height: 45px;
+    font-size: 30px;   
+    bottom: 100px; 
+    right: 53%; 
+}
+}
+
+@media screen and (max-width: 550px) {
+.holder .start {
+    width: 160px;
+    height: 45px;
+    font-size: 30px;   
+    bottom: 50px; 
+    right: 50%; 
+}
+}
+
+@media screen and (max-width: 400px) {
+.holder .start {
+    width: 120px;
+    height: 35px;
+    font-size: 20px;   
+    bottom: 50px; 
+    right: 50%; 
+}
+}
+
+@media screen and (max-width: 300px) {
+.holder .start {
+    width: 100px;
+    height: 35px;
+    font-size: 17px;   
+    bottom: 25px; 
+    right: 50%; 
+}
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 1700px) {
+    .task-preview {
+    width: 50%;
+}
+    form {
+    width: 50%;
+}
+}
+
+@media screen and (max-width: 1200px) {
+    .task-preview {
+    width: 60%;
+}
+form {
+    width: 60%;
+}
+}
+
+@media screen and (max-width: 900px) {
+    .task-preview {
+    width: 70%;
+}
+form {
+    width: 70%;
+}
+}
+
+@media screen and (max-width: 700px) {
+    .task-preview {
+    width: 80%;
+}
+form {
+    width: 80%;
+}
+}
+@media screen and (max-width: 600px) {
+    .task-preview {
+    width: 90%;
+}
+form {
+    width: 90%;
+}
+}
+@media screen and (max-width: 500px) {
+    .task-preview {
+    width: 99%;
+}
+form {
+    width: 99%;
+}
 }
