@@ -16,7 +16,7 @@ const useFetch = (url) => {
             return res.json();
         })
     .then(data => {
-            setTask(data);
+            setTask(data.tasks);
             setLoading(false);
             setError(null);
         })

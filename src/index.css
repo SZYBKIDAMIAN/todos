@@ -155,6 +155,7 @@ form {
     margin-top: 50px;
     color: red;
     font-size: 20px;
+    margin-bottom: 65vh;
 }
 
 .loading {
@@ -162,6 +163,7 @@ form {
     margin-top: 50px;
     color: #49a7ff;
     font-size: 20px;
+    margin-bottom: 65vh;
 }
 
 .intro-text {
